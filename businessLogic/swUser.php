@@ -23,9 +23,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'DELETE') {
 // Add User
 else if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
+    $directorio="imagenes/";
+    $nombreArchivo=$_FILES['photoUser']['name'];
+    $rutaTemporal=$_FILES['photoUser']['tmp_name'];
+
+    $rutaDefinitiva=$directorio.$nombreArchivo;
+
+   
+
+    if(!file_exists($directorio)){
+        mkdir($directorio,0777);
+    }
+
+    move_uploaded_file($rutaTemporal,$rutaDefinitiva);
+    
+    
+    
     $nameUser = $_POST['nameUser'];
     $lastnameUser = $_POST['lastnameUser'];
-    $photoUser = $_POST['photoUser'];
+    $photoUser = $rutaDefinitiva;
 
     $objConexion = new ConexionDB();
     $objUser = new User($objConexion);

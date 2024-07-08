@@ -31,17 +31,8 @@ window.addEventListener('message', (event) => {
             },
             body: JSON.stringify(user)
         });
-
         window.close();
-  
-        /*const data = await response.json();
-  
-        if (data.success) {
-            alert(data.message);
-            window.close(); // Cierra la ventana después de actualizar
-        } else {
-            alert(data.message);
-        }*/
+        
     } catch (error) {
         console.error('Error al actualizar usuario:', error);
     }

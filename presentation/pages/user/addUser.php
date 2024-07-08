@@ -32,7 +32,7 @@
             </div>
             <div class="mb-6">
                 <label for="photoUser" class="block text-gray-700 text-sm font-bold mb-2">Foto:</label>
-                <input type="text" id="photoUser" name="photoUser" accept="image/*"
+                <input type="file" id="photoUser" name="photoUser"
                     class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
             </div>
             <div class="flex items-center justify-between">
